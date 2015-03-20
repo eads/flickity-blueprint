@@ -9,7 +9,7 @@ from clint.textui import colored, puts
 from flask import Blueprint
 from tarbell.hooks import register_hook
 
-NAME = "Basic Bootstrap 3 template"
+NAME = "Flickity gallery"
 
 blueprint = Blueprint('base', __name__)
 
