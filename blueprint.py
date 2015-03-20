@@ -18,10 +18,12 @@ blueprint = Blueprint('base', __name__)
 def copy_files(site, git):
     blueprint_root = os.path.join(site.path, '_blueprint')
 
+    os.mkdir(os.path.join(site.path, 'css'))
     src_css = os.path.join(blueprint_root, 'css/style.css')
     dst_css = os.path.join(site.path, 'css/style.css')
     shutil.copy2(src_css, dst_css)
 
+    os.mkdir(os.path.join(site.path, 'js'))
     src_js = os.path.join(blueprint_root, 'js/app.js')
     dst_js = os.path.join(site.path, 'js/app.js')
     shutil.copy2(src_js, dst_js)
