@@ -25,6 +25,7 @@
 }
 .gallery-cell .content {
   max-width: 900px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 .flickity-prev-next-button {
