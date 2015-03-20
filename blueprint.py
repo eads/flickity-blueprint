@@ -16,7 +16,12 @@ blueprint = Blueprint('base', __name__)
 
 @register_hook('newproject')
 def copy_files(site, git):
+    """
+    Copy css and js
+    """
     blueprint_root = os.path.join(site.path, '_blueprint')
+
+    puts("Copying css and javascript")
 
     os.mkdir(os.path.join(site.path, 'css'))
     src_css = os.path.join(blueprint_root, 'css/style.css')
@@ -28,9 +33,15 @@ def copy_files(site, git):
     dst_js = os.path.join(site.path, 'js/app.js')
     shutil.copy2(src_js, dst_js)
 
+    puts(git.add('.'))
+    puts(git.commit(m='Add css and js files'))
+
 
 @register_hook('newproject')
 def create_repo(site, git):
+    """
+    Ask to create a repository
+    """
     create = raw_input("Want to create a Github repo for this project [Y/n]? ")
     if create and not create.lower() == "y":
         return puts("Not creating Github repo...")
