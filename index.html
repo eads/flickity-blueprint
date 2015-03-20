@@ -1,12 +1,20 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<div class="container">
-  <div class="jumbotron">
-    <h1>Welcome to your new project!</h1>
-    <p>Replace this message with your own content in <code>{{ PROJECT_PATH }}/index.html</code>.</p>
-    <p>Learn more on the <a href="_example.html">example page</a>.</p>
+
+<div class="gallery js-flickity"
+    data-flickity-options='{ "pageDots": false, "accessibility": true }'>
+
+  {% for slide in slides %}
+  <div class="gallery-cell{% if extra_class %} {{ extra_class }}{% endif %}"
+    {% if slide.background_image %}style="background-image: url('{{ slide.background_image }}');"{% endif %}>
+    <div class="content">
+      <h1>{{ slide.headline|safe }}</h1>
+      {{ slide.text|safe }}
+    </div>
   </div>
+  {% endfor %}
 </div>
+
 {% endblock content %}
 

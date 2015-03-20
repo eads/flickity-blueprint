@@ -8,18 +8,14 @@
   {% endblock %}
 
   {% block library_css %}
-  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="lib/css/flickity.css" />
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
   {% endblock library_css %}
 
   {% block css %}{% endblock %}
 
-  {% block shim %}
-  <!--[if lt IE 9]>
-  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  {% endblock %}
-
-  {% block opengraph %} 
+  {% block opengraph %}
   <meta property="og:url" content="http://{{ ROOT_URL }}/{% if PATH != 'index.html' %}{{ PATH }}{% endif %}" />
   <meta property="og:title" content="{{ title }}" />
   <meta property="og:type" content="website" />
@@ -51,21 +47,14 @@
   {% endif %}
   {% endblock google_analytics %}
 </head>
-<body {% block bodyattrs %}class="page-{{ PATH[:-5] }}"{% endblock bodyattrs %}>
-
-{% block nav %}
-  {% include "_nav.html" %}
-{% endblock nav %}
+<body>
 
 {% block content %}{% endblock content %}
 
-{% block footer %}
-  {% include "_footer.html" %}
-{% endblock footer %}
-
 {% block library_scripts %}
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<script src="lib/js/flickity.pkgd.js"></script>
 {% endblock library_scripts %}
 
 {% block scripts %}{% endblock %}
