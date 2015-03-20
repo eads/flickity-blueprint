@@ -17,8 +17,16 @@
   display: table;
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
 }
-.gallery-cell .content {
+.gallery-cell .content-wrapper {
   display: table-cell;
   vertical-align: middle;
+}
+.gallery-cell .content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.flickity-prev-next-button {
+  position: fixed;
 }
