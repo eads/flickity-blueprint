@@ -9,7 +9,7 @@ var onDocumentReady = function() {
   $gallery.flickity({
     "pageDots": false,
     "accessibility": true
-  });
+  }).focus();
 }
 
 $(document).ready(onDocumentReady);
