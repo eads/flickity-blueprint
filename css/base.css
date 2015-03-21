@@ -1,5 +1,3 @@
-/*body {*/
-/*}*/
 .gallery {
   position: absolute;
   left: 0;
@@ -28,6 +26,6 @@
   padding: 0 20px;
   margin: 0 auto;
 }
-.flickity-prev-next-button {
-  position: fixed;
+.flickity-viewport {
+  overflow: scroll;
 }

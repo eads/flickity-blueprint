@@ -8,7 +8,8 @@ var onDocumentReady = function() {
   // Initialize
   $gallery.flickity({
     "pageDots": false,
-    "accessibility": true
+    "accessibility": true,
+    "setGallerySize": false
   }).focus();
 }
 
