@@ -10,10 +10,12 @@
 <div class="gallery">
   {% for slide in slides %}
   <div class="gallery-cell{% if extra_class %} {{ extra_class }}{% endif %}"{% if slide.background_image %} style="background-image: url('{{ slide.background_image }}');"{% endif %}>
-    <div class="content-wrapper">
-      <div class="content">
-        <h1>{{ slide.headline|safe }}</h1>
-        {{ slide.text|safe }}
+    <div class="content-outer-wrapper">
+      <div class="content-wrapper">
+        <div class="content">
+          <h1>{{ slide.headline|safe }}</h1>
+          {{ slide.text|safe }}
+        </div>
       </div>
     </div>
   </div>
