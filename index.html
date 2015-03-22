@@ -9,7 +9,7 @@
 {% block content %}
 <div class="gallery">
   {% for slide in slides %}
-  <div class="gallery-cell{% if extra_class %} {{ extra_class }}{% endif %}"{% if slide.background_image %} style="background-image: url('{{ slide.background_image }}');"{% endif %}>
+  <div class="gallery-cell{% if slide.extra_class %} {{ slide.extra_class }}{% endif %}"{% if slide.background_image %} style="background-image: url('{{ slide.background_image }}');"{% endif %}>
     <div class="content-outer-wrapper">
       <div class="content-wrapper">
         <div class="content">
